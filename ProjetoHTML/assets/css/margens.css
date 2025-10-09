@@ -1,0 +1,15 @@
+.quadrado{
+    width: 200px;
+    height: 200px;
+    background-color: green;
+}
+
+.quadrado--2{
+    width: 200px;
+    height: 200px;
+    background-color: cyan;
+}
+
+body{
+    margin: 0px;
+}

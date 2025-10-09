@@ -1,0 +1,6 @@
+.quadrado--azul{
+    background-color: blue;
+    width: 290px;
+    height: 390px;
+    border: 10px solid red;
+}
