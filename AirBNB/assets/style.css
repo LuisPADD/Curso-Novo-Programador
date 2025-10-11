@@ -61,13 +61,13 @@ body {
     display: flex;
     height: 40px;
     align-items: center;
-    margin-left: 80px;
+    margin-left: 130px;
     cursor: pointer;
 }
 
 .menus {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .item--menu {
@@ -184,7 +184,8 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between; /* Adicione esta linha */
+    justify-content: space-between;
+    /* Adicione esta linha */
     width: 100%;
 }
 
@@ -220,7 +221,8 @@ body {
     height: 50px;
     color: white;
     cursor: pointer;
-    flex-shrink: 0; /* impede o botão de ser comprimido */
+    flex-shrink: 0;
+    /* impede o botão de ser comprimido */
 }
 
 .button--buscar:hover {
@@ -241,17 +243,17 @@ body {
 }
 
 .o--melhor {
-    font-size:  60px;
+    font-size: 60px;
     font-family: 'airbnb-bold';
     color: #222222;
 }
 
-.o--melhor--2{
-    font-size:  60px;
+.o--melhor--2 {
+    font-size: 60px;
     font-family: 'airbnb-bold';
     color: #222222;
     margin-top: -20px;
-} 
+}
 
 .sugestoes {
     font-size: 18px;
@@ -271,23 +273,24 @@ body {
     font-size: 18px;
 }
 
-.explore{
-    margin-left: 80px;
+.explore {
+    margin-left: 130px;
     font-family: 'airbnb-bold';
     font-size: 40px;
     font-weight: 600;
     color: #222222;
 }
+
 .locais {
     height: 80px;
-    padding: 10px 80px; 
+    padding: 10px 130px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 
 }
 
-.local--item{
+.local--item {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -300,14 +303,14 @@ body {
 }
 
 
-.texto--local  {
+.texto--local {
     flex: 4;
     display: flex;
     flex-direction: column;
     margin-left: 10px;
 }
 
-.texto--local b{
+.texto--local b {
     flex: 1;
     font-family: 'airbnb-bold';
     color: #222222;
@@ -317,7 +320,7 @@ body {
 
 }
 
-.texto--local p{
+.texto--local p {
     flex: 1;
     font-family: 'airbnb-light';
     color: #222222;
@@ -329,3 +332,219 @@ body {
     border-radius: 15px;
     height: 100%;
 }
+
+.lugares {
+    height: 400px;
+    padding: 10px 130px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 15px;
+}
+
+.lugar--item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.lugar--item img {
+    max-width: 95%;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.lugar--item p {
+    font-family: 'airbnb-black';
+    color: #222222;
+    font-size: 24px;
+    margin-top: 2px;
+}
+
+.hospedar {
+    padding: 10px 130px;
+    height: 600px;
+}
+
+.imagem--hospedar {
+    background-image: url('../assets/images/hospedar.png');
+    background-size: cover;
+    display: flex;
+    height: 100%;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: center;
+    background-position: center bottom;
+
+}
+
+.imagem--hospedar b {
+    color: white;
+    margin-left: 80px;
+    font-family: 'airbnb-light';
+    font-weight: 600;
+    font-size: 16px;
+
+}
+
+.p--1 {
+    font-size: 45px;
+    color: white;
+    margin-left: 80px;
+    font-family: 'airbnb-bold';
+}
+
+.p--2 {
+    font-size: 45px;
+    color: white;
+    margin-left: 80px;
+    font-family: 'airbnb-bold';
+    margin-top: -60px;
+
+}
+
+.b {
+    margin-top: -15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.saiba--mais {
+    color: #222222;
+    background: white;
+    border: 0;
+    padding: 23px 30px;
+    font-family: 'airbnb-bold';
+    width: 170px;
+    margin-left: 130px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.atividades {
+    font-size: 40px;
+    font-family: 'airbnb-light';
+    color: #222222;
+    font-weight: 400;
+    margin-left: 130px;
+    margin-top: -5px;
+}
+
+.todo--atividades {
+    padding: 15px 130px;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.atividade--item {
+    flex: 1;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.atividade--item img {
+    width: 95%;
+    border-radius: 10px;
+}
+
+.atividade--item b {
+    font-family: 'airbnb-light';
+    color: #222222;
+    font-size: 24px;
+    margin-top: 10px;
+    font-weight: 900;
+}
+
+.atividade--item p {
+    font-family: 'airbnb-light';
+    color: gray;
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+.footer {
+    height: 545px;
+    background: #f7f7f7;
+    border-top: 1px solid #e0e0e0;
+    padding: 0px 130px;
+    margin-top: 140px;
+}
+
+.menus--footer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.footer--item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer--item b {
+    font-family: 'airbnb-light';
+    color: #222222;
+    font-size: 12px;
+    font-weight: 2000;
+    margin-bottom: 10px;
+}
+
+.footer--item p {
+    color: #222222;
+    font-size: 14px;
+    font-family: 'airbnb-light';
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.footer-end {
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.footer--1 {
+    flex: 2;
+    font-size: 14px;
+}
+
+.footer--1 p {
+    font-family: 'airbnb-light';
+    color: #222222;
+}
+
+.footer--2 {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    font-size: 14px;
+}
+
+.footer--globe {
+    margin-right: 15px;
+    font-size: 16px !important;
+}
+
+.footer--2--item {
+    font-family: 'airbnb-light';
+    text-decoration: underline;
+}
+
+.currency {
+    margin-left: 25px;
+    margin-right: 8px;
+    font-family: 'airbnb-light';
+}
+
