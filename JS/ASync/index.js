@@ -24,4 +24,3 @@ result.then((velocidade)=>{
 }).catch(()=>{
     console.log("Ocorreu um erro ao ler a velocidade atual do veiculo!")
 });
-
