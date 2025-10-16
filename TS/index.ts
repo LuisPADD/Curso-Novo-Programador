@@ -1,35 +1,32 @@
-class Calculadora {
+class Login {
 
-        PrimeiroNumero: number;
-        SegundoNumero: number;
+    EmailCerto: string;
+    SenhaCerta: string;
 
 
-        constructor(primeiroNumero: number, segundoNumero: number){
-            this.PrimeiroNumero = primeiroNumero;
-            this.SegundoNumero = segundoNumero;
+    constructor(emailCerto: string, senhaCerta: string){
+        this.EmailCerto = emailCerto;
+        this.SenhaCerta = senhaCerta;
+    }
+
+    administrador(email:string, senha:string): boolean{
+        if(email == this.EmailCerto && senha == this.SenhaCerta){
+            return true;
+        }else{
+            return false;   
         }
 
-        somar(){
-            return this.PrimeiroNumero + this.SegundoNumero;
-        }
-        subtrair(){
-            return this.PrimeiroNumero - this.SegundoNumero;
-        }
-        multiplicar(){
-            return this.PrimeiroNumero * this.SegundoNumero;
-        }
-        dividir(){
-            return this.PrimeiroNumero / this.SegundoNumero;
-        }
+
+    }
+
+    funcionario(): boolean{
+        return false;
+    }
+
 }
 
-const calculadora = new Calculadora(15, 54);
-const resultadoSoma = calculadora.somar();
-const resultadoSubtracao = calculadora.subtrair();
-const resultadoMultiplicacao = calculadora.multiplicar();
-const resultadoDivisao = calculadora.dividir();
+const login = new Login('certo@gmail.com','123');
 
-console.log(resultadoSoma)
-console.log(resultadoSubtracao)
-console.log(resultadoMultiplicacao)
-console.log(resultadoDivisao)
+const loginAdm = login.administrador('certo@gmail.com', '1233')
+
+console.log(loginAdm)

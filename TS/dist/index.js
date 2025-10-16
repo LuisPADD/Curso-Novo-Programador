@@ -1,29 +1,22 @@
-var Calculadora = /** @class */ (function () {
-    function Calculadora(primeiroNumero, segundoNumero) {
-        this.PrimeiroNumero = primeiroNumero;
-        this.SegundoNumero = segundoNumero;
+var Login = /** @class */ (function () {
+    function Login(emailCerto, senhaCerta) {
+        this.EmailCerto = emailCerto;
+        this.SenhaCerta = senhaCerta;
     }
-    Calculadora.prototype.somar = function () {
-        return this.PrimeiroNumero + this.SegundoNumero;
+    Login.prototype.administrador = function (email, senha) {
+        if (email == this.EmailCerto && senha == this.SenhaCerta) {
+            return true;
+        }
+        else {
+            return false;
+        }
     };
-    Calculadora.prototype.subtrair = function () {
-        return this.PrimeiroNumero - this.SegundoNumero;
+    Login.prototype.funcionario = function () {
+        return false;
     };
-    Calculadora.prototype.multiplicar = function () {
-        return this.PrimeiroNumero * this.SegundoNumero;
-    };
-    Calculadora.prototype.dividir = function () {
-        return this.PrimeiroNumero / this.SegundoNumero;
-    };
-    return Calculadora;
+    return Login;
 }());
-var calculadora = new Calculadora(15, 54);
-var resultadoSoma = calculadora.somar();
-var resultadoSubtracao = calculadora.subtrair();
-var resultadoMultiplicacao = calculadora.multiplicar();
-var resultadoDivisao = calculadora.dividir();
-console.log(resultadoSoma);
-console.log(resultadoSubtracao);
-console.log(resultadoMultiplicacao);
-console.log(resultadoDivisao);
+var login = new Login('certo@gmail.com', '123');
+var loginAdm = login.administrador('certo@gmail.com', '1233');
+console.log(loginAdm);
 //# sourceMappingURL=index.js.map
