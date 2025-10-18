@@ -1,37 +1,57 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 
 function App() {
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [mensagem, setMensagem] = useState('');
+  const [primeiroNumero, setPrimeiroNumero] = useState<number>(0);
+  const [operacao, setOperacao] = useState('');
+  const [segundoNumero, setsegundoNumero] = useState<number>(0);
+  const [resultado, setResultado] = useState<number>(0);
 
-  function handleSubmit(e: React.FormEvent){
+  function handlesubmit(e: React.FormEvent){
     e.preventDefault();
-    //TODO: Enviar dados para BackEnd
-    
-    console.log(nome,email,mensagem)
+
+    switch (operacao) {
+      case '+':
+          setResultado(primeiroNumero+segundoNumero);
+        break;
+      case '-':
+          setResultado(primeiroNumero-segundoNumero);
+        break;
+      case '*':
+          setResultado(primeiroNumero*segundoNumero);
+        break;
+      case '/':
+          setResultado(primeiroNumero/segundoNumero);
+        break;
+      case '':
+          setResultado(0);
+        break;
+      default:
+
+        break;
+    }
   }
+
 
   return (  
     <>
-      <form onSubmit={handleSubmit}>
-        <p>Nome:</p>
-        <input type="text" required onChange={(e)=>{setNome(e.target.value)}} value={nome}/>
 
-        <br />
+    <form method="submit" onSubmit={handlesubmit}>
+      <input type="number" onChange={(e)=>{setPrimeiroNumero(e.target.valueAsNumber)}} value={primeiroNumero}/>
 
-        <p>E-mail:</p>
-        <input type="email" required onChange={(e)=>{setEmail(e.target.value)}} value={email}/>
+      <select onChange={(e)=>{setOperacao(e.target.value)}} value={operacao}>
+        <option value="">-- Selecione a operação --</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="*">*</option>
+      </select>
 
-
-        <p>Mensagem:</p>
-        <textarea  placeholder="Digite aqui sua Mensagem!" required onChange={(e)=>{setMensagem(e.target.value)}}>{mensagem}</textarea>
-
-        <br />
-
-        <button type="submit">Enviar!</button>
-      </form>
+      <input type="number" onChange={(e)=>{setsegundoNumero(e.target.valueAsNumber)}} value={segundoNumero}/>
       
+      <button type="submit">Calcular</button>
+      <br />
+      <b>RESULTADO: {resultado}</b>
+    </form>  
     </>
   );
 }
