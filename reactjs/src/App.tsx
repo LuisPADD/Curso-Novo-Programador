@@ -1,18 +1,37 @@
 import React, {useState, useEffect} from "react";
 
 function App() {
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [mensagem, setMensagem] = useState('');
 
-  const [login, setLogin] = useState('Não Logado!');
+  function handleSubmit(e: React.FormEvent){
+    e.preventDefault();
+    //TODO: Enviar dados para BackEnd
+    
+    console.log(nome,email,mensagem)
+  }
+
   return (  
     <>
-      <button onClick={()=>{setLogin('Logado')}}>LOGIN</button>
+      <form onSubmit={handleSubmit}>
+        <p>Nome:</p>
+        <input type="text" required onChange={(e)=>{setNome(e.target.value)}} value={nome}/>
 
-      <button onClick={()=>{setLogin('Não Logado!')}}>DESLOGAR</button>
+        <br />
 
-      <br/>
-      <br/>
+        <p>E-mail:</p>
+        <input type="email" required onChange={(e)=>{setEmail(e.target.value)}} value={email}/>
 
-      {login}
+
+        <p>Mensagem:</p>
+        <textarea  placeholder="Digite aqui sua Mensagem!" required onChange={(e)=>{setMensagem(e.target.value)}}>{mensagem}</textarea>
+
+        <br />
+
+        <button type="submit">Enviar!</button>
+      </form>
+      
     </>
   );
 }
