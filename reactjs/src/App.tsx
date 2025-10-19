@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 function App() {
   const [primeiroNumero, setPrimeiroNumero] = useState<number>(0);
@@ -6,12 +6,16 @@ function App() {
   const [segundoNumero, setsegundoNumero] = useState<number>(0);
   const [resultado, setResultado] = useState<number>(0);
 
-  function handlesubmit(e: React.FormEvent){
-    e.preventDefault();
+  useEffect(() => {
 
     switch (operacao) {
-      case '+':
-          setResultado(primeiroNumero+segundoNumero);
+      case '+': 
+        let resultado = primeiroNumero + segundoNumero;
+
+        if(!isNaN(resultado)) {
+          setResultado(resultado);
+        };        
+
         break;
       case '-':
           setResultado(primeiroNumero-segundoNumero);
@@ -29,13 +33,19 @@ function App() {
 
         break;
     }
+    
+  }, [primeiroNumero, operacao, segundoNumero]);
+
+  function handlesubmit(e: React.FormEvent){
+    e.preventDefault();
+
+    
   }
 
 
   return (  
     <>
 
-    <form method="submit" onSubmit={handlesubmit}>
       <input type="number" onChange={(e)=>{setPrimeiroNumero(e.target.valueAsNumber)}} value={primeiroNumero}/>
 
       <select onChange={(e)=>{setOperacao(e.target.value)}} value={operacao}>
@@ -48,10 +58,8 @@ function App() {
 
       <input type="number" onChange={(e)=>{setsegundoNumero(e.target.valueAsNumber)}} value={segundoNumero}/>
       
-      <button type="submit">Calcular</button>
       <br />
       <b>RESULTADO: {resultado}</b>
-    </form>  
     </>
   );
 }
