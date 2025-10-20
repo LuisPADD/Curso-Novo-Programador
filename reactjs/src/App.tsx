@@ -1,24 +1,16 @@
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const usuarios = [
-    {name: 'Vitor', lastname: 'Manoel'},
-    {name: 'Ana', lastname: 'Nogueira'},
-  ];
+
+  const [logged, setLogged] = useState(false);
 
   return (
     <>
+      {logged && <p>Promoçoes do Dia</p>}
+      
+      {!logged && <p>Você não está logado. Faça login para ver as promoçoes do dia</p>}
 
-      {usuarios.map((nomes) => {
-        return (
-          <>
-            {nomes.name} {nomes.lastname}
-             <br />
-          </>
-        )
-      }
-      )
-      }
+      <button>Logar</button>
 
     </>
   );
