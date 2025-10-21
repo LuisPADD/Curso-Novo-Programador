@@ -1,20 +1,25 @@
-import './assets/css/app.css';
+import { Espaco, Texto, Quadrado, Botao} from './appStyled';
+import React, {useState} from 'react';
 
 function App() {
 
+  const [theme, setTheme] = useState(false);
+
+
   return (
+
     <>
+      <Espaco altura='150px' largura='150px' black={theme}>
+        <Texto>Olá</Texto>     
+      </Espaco>
 
-      <h1 className='titulo'>Titulo do BLOG</h1>
-      <h2 className='subtitulo' >Subtitulo do BLOG</h2>
-
-      <br /> <br />
-      
-      <p className='paragrafo'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut sunt tempore officia, accusantium nulla sed nam ipsam. Possimus expedita blanditiis, ea soluta sed ab ullam vitae, harum laborum quo dolorum.</p>
-
+      <Quadrado>
+        <Botao onClick={()=>{setTheme(!theme)}}>Trocar Tema</Botao>
+      </Quadrado>
 
     </>
   );
+
 }
 
 export default App;
