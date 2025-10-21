@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from "react";
+import './assets/css/app.css';
 
 function App() {
-
-  const [logged, setLogged] = useState(false);
 
   return (
     <>
 
-      <h1 style={{color:'black', fontSize: '45px', backgroundColor: 'gray'}}>Titulo do BLOG</h1>
-      <h2 style={{color: 'blue', fontSize: '150px'}}>Subtitulo do BLOG</h2>
+      <h1 className='titulo'>Titulo do BLOG</h1>
+      <h2 className='subtitulo' >Subtitulo do BLOG</h2>
 
-      <br />  
+      <br /> <br />
       
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut sunt tempore officia, accusantium nulla sed nam ipsam. Possimus expedita blanditiis, ea soluta sed ab ullam vitae, harum laborum quo dolorum.</p>
+      <p className='paragrafo'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut sunt tempore officia, accusantium nulla sed nam ipsam. Possimus expedita blanditiis, ea soluta sed ab ullam vitae, harum laborum quo dolorum.</p>
 
 
     </>
