@@ -1,40 +1,32 @@
 import styled from "styled-components";
 
-type EspacoProps = {
-    altura: string;
-    largura: string;
-    black?: boolean;
-}
-
-export const Espaco = styled.div<EspacoProps>`
-    background-color: ${(props) => props.black ? 'black': 'white'};
-    width: ${(props) => props.largura};
-    height: ${(props) => props.altura};
+export const Header = styled.div`
+    height: 48px;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    position: absolute;
+    z-index: 9999;
+    min-width: 1024px;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-height: 44px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
-    border-radius: 20px;
-    color: ${(props) => props.black ? 'white' : 'black'};
-  `;
-
-export const Texto = styled.h1`
-    font-size: 30px; 
+    gap: 47px;
 `;
 
-export const Quadrado = styled.div`
-    width: 200px;
-    background-color: blue;
-    height: 200px;
+export const ItemHeader = styled.div`
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+
 `;
 
-export const Botao = styled.button`
-    padding: 40px;
-    background-color: white;
-    color: black;
+export const TextHeader = styled.div`
+    font-size: 13px;
+    color: rgba(245, 245, 247, 0.8);
+    font-family: 'MyriadProLight';
+    cursor: pointer;
+    letter-spacing: -.01em;
 `;
